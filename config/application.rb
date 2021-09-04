@@ -18,7 +18,7 @@ require "rails/test_unit/railtie"
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
-
+Dotenv::Railtie.load
 module FilesUploadS3
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
@@ -30,6 +30,7 @@ module FilesUploadS3
     # in config/environments, which are processed later.
     #
     # config.time_zone = "Central Time (US & Canada)"
-    # config.eager_load_paths << Rails.root.join("extras")
+    # config.eager_load_paths << Rails.root.join('app', 'services')
+    # config.autoload_paths << config.root.join('app', 'services')
   end
 end
