@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'move_files_to_s3#index'
+  root 'index#index'
   # namespace :api do
   #   resources :move_files_to_s3
   get 'move_files_to_s3', to: 'move_files_to_s3#create'
